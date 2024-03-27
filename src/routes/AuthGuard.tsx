@@ -17,7 +17,6 @@ const AuthGuard = ({ children }: { children: ReactNode }) => {
 			setRequestedLocation(pathname);
 		}
 
-		// clearCookie('')
 		return <Login />;
 	}
 
