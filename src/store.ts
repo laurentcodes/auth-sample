@@ -24,11 +24,6 @@ const authStore = create<AuthState>()((set) => ({
 		location.href = '/';
 	},
 	logout: () => {
-		set(() => ({
-			authenticated: false,
-			// user: null,
-		}));
-
 		clearCookie('authenticated');
 		clearCookie('user');
 
