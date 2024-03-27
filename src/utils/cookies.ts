@@ -39,7 +39,7 @@ export const getCookie = (name: string) => {
 // Function to clear a cookie by setting its expiration to the past
 export const clearCookie = (name: string) => {
 	const cookieString = `${name}=; Max-Age=${0}; path=/; domain=${
-		window.location.hostname
+		location.hostname
 	}`;
 
 	// Set the cookie with an expired date
