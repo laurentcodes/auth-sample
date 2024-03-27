@@ -18,8 +18,8 @@ const authStore = create<AuthState>()((set) => ({
 			user: state.data,
 		}));
 
-		setCookie('authenticated', 'true', 60);
-		setCookie('user', JSON.stringify(state.data), 60);
+		setCookie('authenticated', 'true', 3600);
+		setCookie('user', JSON.stringify(state.data), 3660);
 
 		location.href = '/';
 	},
