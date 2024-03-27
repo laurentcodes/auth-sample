@@ -8,7 +8,7 @@ export const setCookie = (
 	const expirationDate = new Date(expirationTime);
 
 	// Convert the expirationDate to a UTC string
-	const expires = `expires=${expirationDate.toUTCString()}; Max-Age=${expirationDate.toUTCString()}`;
+	const expires = `expires=${expirationDate.toUTCString()}`;
 
 	// Create the cookie string
 	const cookieString = `${name}=${value}; ${expires}; path=/`;

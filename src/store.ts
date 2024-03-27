@@ -18,12 +18,17 @@ const authStore = create<AuthState>()((set) => ({
 			user: state.data,
 		}));
 
-		setCookie('authenticated', 'true', 3600);
-		setCookie('user', JSON.stringify(state.data), 3660);
+		setCookie('authenticated', 'true', 3600 * 6);
+		setCookie('user', JSON.stringify(state.data), 3600 * 6);
 
 		location.href = '/';
 	},
 	logout: () => {
+		set(() => ({
+			authenticated: false,
+			// user: null,
+		}));
+
 		clearCookie('authenticated');
 		clearCookie('user');
 
