@@ -4,23 +4,28 @@ import App from '../pages/App';
 import Login from '../pages/Login';
 import AuthGuard from './AuthGuard';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+	[
+		{
+			path: '/login',
+			element: (
+				<AuthGuard>
+					<Login />
+				</AuthGuard>
+			),
+		},
+		{
+			path: '/',
+			element: (
+				<AuthGuard>
+					<App />
+				</AuthGuard>
+			),
+		},
+	],
 	{
-		path: '/login',
-		element: (
-			<AuthGuard>
-				<Login />
-			</AuthGuard>
-		),
-	},
-	{
-		path: '/',
-		element: (
-			<AuthGuard>
-				<App />
-			</AuthGuard>
-		),
-	},
-]);
+		basename: '/dist',
+	}
+);
 
 export default router;
